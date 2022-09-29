@@ -19,7 +19,6 @@ impl Tilesheet {
             .source
             .to_str()
             .expect("obtaining valid UTF-8 path");
-        println!("{:?}", texture_path);
         let texture = texture::load_texture(texture_path).await.unwrap();
 
         Tilesheet { texture, tileset }
