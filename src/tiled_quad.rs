@@ -1,14 +1,16 @@
 use crate::util::mesh::QuadMesh;
 use crate::util::tilesheet::Tilesheet;
 use macroquad::{math::vec2, texture::Texture2D};
-use tiled::{FiniteTileLayer, Map};
+use tiled::{FiniteTileLayer, Loader};
 
 pub struct Tile {
     layers: Vec<QuadMesh>,
 }
 
 impl Tile {
-    pub async fn from_map(map: Map) -> Self {
+    pub async fn from_map(path: &str) -> Self {
+        let mut loader = Loader::new();
+        let map = loader.load_tmx_map(path).unwrap();
         let tileset = map.tilesets()[0].clone();
         let tilesheet = Tilesheet::from_tileset(tileset).await;
 
