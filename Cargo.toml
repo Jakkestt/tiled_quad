@@ -1,6 +1,10 @@
 [package]
 name = "tiled_quad"
 version = "0.1.0"
+authors = ["Jarkko Arffman <jakkee116@gmail.com"]
+license = "MIT"
+description = "Load tiled tmx files and render them in macroquad"
+repository = "https://github.com/Jakkestt/tiled_quad.git"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
